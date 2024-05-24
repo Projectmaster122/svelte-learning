@@ -40,10 +40,8 @@
     </button>
 
     {#if toDouble != false}
-        <br>
         <p class={pClass} >You have clicked {clicks}, times! Thats {value} Doubled!</p>
     {:else}
-        <br>
         <p class={pClass} >You have clicked {clicks} times!</p>
     {/if}
 

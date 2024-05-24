@@ -1,23 +1,43 @@
 <script>
     import CounterScript from "../CounterScript.svelte"
-    let pkg = {
+    let setup_pkg = {
         "value": 2,
-        "clicks": 1
+        "clicks": 1,
+        "pClass": "text-lg text-gray-600 mb-8",
+        "buttonClass": "bg-blue-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
     }
     // has to be separate from pkg because funni
     let toDouble = false;
+    let toCenter = true;
+
     function svetlog() {
-        if (toDouble) {
-            toDouble = false
-        }else {
-            toDouble = true;
-        }
+            if (toCenter) {
+                toCenter = false
+            } else {
+                toCenter = true;
+            }
+        
+    }
+
+    function svetlog_b() {
+        
+            if (toDouble) {
+                toDouble = false
+            } else {
+                toDouble = true;
+            }
+        
         
     }
 </script>
 
-<CounterScript bind:toDouble={toDouble} {...pkg}/>
+<CounterScript bind:toDouble={toDouble} bind:toCenter={toCenter} {...setup_pkg}/>
 
-<button on:click={svetlog}>
+
+<button on:click={svetlog_b} class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
     toDouble = {toDouble}
+</button>
+
+<button on:click={svetlog} class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
+    toCenter = {toCenter}
 </button>
