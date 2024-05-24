@@ -9,7 +9,7 @@
     let toCenter = true;
     let selectedButtonClass = "bg-blue-500 text-white font-semibold py-3 px-5 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75";
     let options_visible = false;
-    let options_text = "Show Settings"
+    let options_text = "Show Settings:"
     let value = 2;
     let clicks = 1;
     $: value = clicks * 2
