@@ -35,10 +35,10 @@
        <br>
        {#if clicks<= 10}
             Your rank is: Beginner
-        {:else if clicks <= 10}
-            Your rank is: None
-        {:else if clicks >= 20}
+        {:else if clicks <= 20}
             Your rank is: Advanced
+        {:else if clicks <= 30}
+            Your rank is: MEGA
         {:else}
             this wip lol
        {/if}
