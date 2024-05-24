@@ -1,0 +1,3 @@
+- maybe add shop for the counting system
+- about page
+- docs for how this works for more new people to sve LTE

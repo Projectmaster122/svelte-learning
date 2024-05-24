@@ -8,7 +8,8 @@
     let toDouble = false;
     let toCenter = true;
     let selectedButtonClass = "bg-blue-500 text-white font-semibold py-3 px-5 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75";
-
+    let options_visible = false;
+    let options_text = "Show"
     function svetlog() {
             if (toCenter) {
                 toCenter = false
@@ -28,6 +29,16 @@
         
         
     }
+
+    function svetlog_c() {
+        if (options_visible) {
+            options_visible = false;
+            options_text = "Show";
+        }else {
+            options_visible = true;
+            options_text = "Hide";
+        }
+    }
 </script>
 
 <center>
@@ -39,6 +50,14 @@
 
 <CounterScript bind:toDouble={toDouble} bind:toCenter={toCenter} {...setup_pkg}/>
 
+<button on:click={svetlog_c} class={!options_visible ? "bg-blue-500 text-white font-semibold py-3 px-5 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75" : "bg-blue-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"}>
+    {options_text}
+</button>
+
+<br>
+<br>
+
+{#if options_visible}
 <button on:click={svetlog_b} class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
     toDouble = {toDouble}
 </button>
@@ -46,3 +65,4 @@
 <button on:click={svetlog} class="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition-transform transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">
     toCenter = {toCenter}
 </button>
+{/if}
