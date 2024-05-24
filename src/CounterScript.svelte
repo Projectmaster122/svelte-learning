@@ -32,7 +32,16 @@
        <button on:click={onclick} class={buttonClass}>
            Increment
        </button>
-
+       <br>
+       {#if clicks<= 10}
+            Your rank is: Beginner
+        {:else if clicks <= 10}
+            Your rank is: None
+        {:else if clicks >= 20}
+            Your rank is: Advanced
+        {:else}
+            this wip lol
+       {/if}
        {#if toDouble != false}
            <br>
            <p class={pClass} >You have clicked {clicks}, times! Thats {value} Doubled!</p>
